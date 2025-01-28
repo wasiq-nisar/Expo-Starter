@@ -4,14 +4,15 @@ import FontAwesome from "@expo/vector-icons/FontAwesome"
 type Props = {
   label: String
   theme?: "primary"
+  onPress?: () => void
 }
 
-export default function Button({ label, theme }: Props) {
+export default function Button({ label, theme, onPress }: Props) {
   if (theme === "primary") {
     return (
       <Pressable
         className="w-[320] h-[54] mt-4 items-center justify-center bg-white rounded-xl border-4 border-yellow-400"
-        onPress={() => alert("You pressed a button.")}
+        onPress={onPress}
       >
         <View className="flex flex-row items-center">
           <FontAwesome
